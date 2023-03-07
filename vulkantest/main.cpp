@@ -153,6 +153,7 @@ private:
 			if (physicalDevice == VK_NULL_HANDLE) {
 				throw std::runtime_error("failed to find a suitable GPU!");
 				//stopped vulkan-tutorial at "Base device suitability checks"
+				//TODO
 			}
 
 		}
