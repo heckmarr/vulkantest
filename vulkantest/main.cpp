@@ -287,7 +287,7 @@ private:
 		createInfo.imageFormat = surfaceFormat.format;
 		createInfo.imageColorSpace = surfaceFormat.colorSpace;
 		createInfo.imageExtent = extent;
-		createInfo.imageArrayLayers = 1;
+		createInfo.imageArrayLayers = 1;//change to 2 for stereo display
 		createInfo.imageUsage = VK_IMAGE_USAGE_COLOR_ATTACHMENT_BIT;
 
 		QueueFamilyIndices indices = findQueueFamilies(physicalDevice);
@@ -338,7 +338,7 @@ private:
 			createInfo.subresourceRange.baseMipLevel = 0;
 			createInfo.subresourceRange.levelCount = 1;
 			createInfo.subresourceRange.baseArrayLayer = 0;
-			createInfo.subresourceRange.layerCount = 1;
+			createInfo.subresourceRange.layerCount = 1;//2 for stereo display
 
 			if (vkCreateImageView(device, &createInfo, nullptr, &swapChainImageViews[i]) != VK_SUCCESS) {
 				throw std::runtime_error("failed to create image views!");
